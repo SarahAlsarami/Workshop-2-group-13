@@ -1,5 +1,5 @@
 
-# First release 
+# Text Classification System 
 
 This workshop is based on developing a web-based machine learning system for simple text 
 classification. The following steps will show you how to set up a Node js server to run the core system of 
