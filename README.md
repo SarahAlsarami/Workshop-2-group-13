@@ -15,7 +15,7 @@ Download npm
  To install npm
 
 ```bash
-   sudo apt install npm
+sudo apt install npm
 
 ```
    Then I create a folder and name it "sat" , placed in the desktop then I put the files :( index.html,index.js and train.txt ) in the folder .
@@ -24,7 +24,7 @@ Download npm
 To  Initialize requirements 
 
 ```bash
-  npm init -y
+npm init -y
 ```
 
 Then to download FastTexts Node, Express, and Cors issues just follow these commands
@@ -41,7 +41,7 @@ cd sat
 Install node fast text 
 
 ```bash
-   npm install node-fasttext --save
+npm install node-fasttext --save
  ```
 
 Install Express: 
@@ -54,13 +54,13 @@ npm install express --save
 Install some cors issues:
 
 ```bash
-    npm install cors --save
+npm install cors --save
 ```
 
 ## Run index.js 
 
 ```bash
-    node index.js
+node index.js
 ```
 
 ## Screenshots of the output
