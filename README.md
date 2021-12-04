@@ -38,7 +38,7 @@ cd Desktop
 cd sat
 ```
 
-Go to the project directory
+Install node fast text 
 
 ```bash
    npm install node-fasttext --save
