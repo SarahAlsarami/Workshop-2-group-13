@@ -27,7 +27,7 @@ To  Initialize requirements
   npm init -y
 ```
 
-Then to download FastTexts Node, Express, and Cors issues
+Then to download FastTexts Node, Express, and Cors issues just follow these commands
 
 
 ## Installation
