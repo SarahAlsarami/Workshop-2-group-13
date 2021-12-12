@@ -1,14 +1,13 @@
+sudo: false 
+
 language: node_js
 
 node_js:
-  - 10
+  - 7
 
 script:
   - npm test
 
-branches:
-  only:
-  - main
+cache:
+  - npm:false
 
-nofications:
-  email: false
