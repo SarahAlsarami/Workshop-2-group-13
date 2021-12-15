@@ -1,17 +1,68 @@
- <!DOCTYPE html>
+
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Your front-end</title>
+<style>
+    .btnn{background-color:azure;
+    color:turquoise}
+</style>
+<title>"Text classification System"</title>
 </head>
+<h1 style="color: rgb(206, 61, 61);" align="center">Text classification System</h1>
+ <h2 dir="rtl"> <img src="https://j.top4top.io/p_21757agxp1.jpg" width="150" height="150"></h2> 
 
-<body>
-<form action="/fasttext">
-	Enter your text to be classified<br>
-	<input type="text" name="statement">
-	<input type="submit" value="Submit">
-</form> 
+    <body>
+        <form id ="iu">
+        <h3 class="btnn" align="center">Enter your Text to be classified :
 
+        <br> <input type="text" name="statement" id="statement">  </form>
+
+        <br><button form="iu"  id="btn" type="submit" value="Submet" >Submet</button> 
+        <button type="reset" form="iu" value="Clear"> Clear</button> <br>
+      
+        <table id="table">
+          <thead>
+            <tr style="color: darkgreen;" >
+              <td>Text</td>
+              <td>Label</td>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+        <template id="row">
+          <tr style="color: gold;">
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </template>
+        <script>
+          let statementValue = document.getElementById('statement');
+          let btn = document.getElementById('btn');
+          let table = document.getElementById('table');
+      
+      
+          btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            console.log(statementValue.value);
+            fetch( 'http://localhost:8000/fasttext/?statement=' + statementValue.value)
+              .then(response => response.json())
+              .then(json => {
+                console.log(json)
+                let tBody = table.querySelector('tbody')
+                json.forEach(obj => {
+                  var clone = document.querySelector('#row').content.cloneNode(true);
+                  var td = clone.querySelectorAll("td");
+                  td[0].textContent = obj.text;
+                  td[1].textContent = obj.label;
+                  tBody.appendChild(clone) 
+                })
+              })
+          })
+          
+        </script>
+    </h3>
 </body>
-
-</html> 
+</html>
+ 
