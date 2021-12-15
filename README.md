@@ -54,34 +54,59 @@ npm install express --save
 npm install cors --save
 ```
 
-## Run Node.js 
+## Travis CI 
 
+Travis CI was the first CI as a Service tool. It introduced a new approach to building code in the cloud. This CI tool allows the user to sign up, link their repository, build, as well as test their apps.
+
+### What does Travis do?
+Travis CI offers following benefits:
+
+* You can monitor GitHub projects
+* Runs Test and generate results quickly. Parallel test execution is possible.
+* Build artifacts & check code quality
+
+#### Steps integrate to Travis
+
+first go to the 
+[Travis CI ](https://www.travis-ci.com/?_gl=1%2A1dvnqks%2A_ga%2ANjkwNzAwNzg5LjE2Mzk1OTQ0NzE.%2A_ga_XRYGSZFQ0P%2AMTYzOTU5NDQ3MC4xLjAuMTYzOTU5NDQ3MC42MA..) sign in with your account in GitHub
+then accept the Authorization of Travis CI.
+then click on your profile picture in the top right of your Travis Dashboard, click Settings and then the green Activate button, and select the repositories you want to use with Travis CI.
+<br>
+#### I made some modifications to my files to make the build pass
+
+in package.json it was
 ```bash
-node index.js
+  "test": "echo \"Error: no test specified\" && exit 1"
 ```
-
-## Screenshots of the output
-
-![App Screenshot](https://e.top4top.io/p_2163rj97k1.png)
-
-now when I go to a file "index.html" and open it
- in the browser
-
-
-![App Screenshot](https://g.top4top.io/p_2163ulhw82.png)
-
-and when he writes anything, it gets classification 
-
-![App Screenshot](https://l.top4top.io/p_216377f7g3.png)
-
-Success will appear and then return to the terminal
-
-![App Screenshot](https://f.top4top.io/p_2163glgi51.png)
-![App Screenshot](https://k.top4top.io/p_2163ov1891.png)
-
-
-## Appendix
-
-how to install virtualbox and Ubuntu :
-
-https://youtu.be/x5MhydijWmc
+change it to
+```bash
+    "test": "echo \"No test specified\""
+```
+and in .travis.yml it was
+```bash
+  Language: node_js
+Node_js: 
+ 10
+```
+change it to
+```bash
+    Language: node_js
+Node_js: 
+ -7
+```
+#### Then I uploaded the files after change to GitHub to see if you passed in travis
+ in termnal
+```bash
+  git status
+```
+```bash
+  git add .
+```
+```bash
+  git commit -m " # commit"
+```
+```bash
+  git push
+```
+When you return to [Travis CI ](https://www.travis-ci.com/?_gl=1%2A1dvnqks%2A_ga%2ANjkwNzAwNzg5LjE2Mzk1OTQ0NzE.%2A_ga_XRYGSZFQ0P%2AMTYzOTU5NDQ3MC4xLjAuMTYzOTU5NDQ3MC42MA..) and go to the intended repository and then click in branches, you will find pass like in this picture
+![App Screenshot](https://b.top4top.io/p_2175il4ed1.png)
